@@ -16,3 +16,94 @@ INFO  04:41:39 Hosting environment: Development
 INFO  04:41:39 Hosting environment: Development
 INFO  04:41:39 Content root path: C:\Users\oliva\source\repos\BankManagement
 INFO  04:41:39 Content root path: C:\Users\oliva\source\repos\BankManagement
+INFO  08:53:26 Application started. Press Ctrl+C to shut down.
+INFO  08:53:26 Application started. Press Ctrl+C to shut down.
+INFO  08:53:26 Hosting environment: Development
+INFO  08:53:26 Hosting environment: Development
+INFO  08:53:26 Content root path: C:\Users\oliva\source\repos\BankManagement
+INFO  08:53:26 Content root path: C:\Users\oliva\source\repos\BankManagement
+ERROR 08:53:40 An unhandled exception has occurred while executing the request.
+Microsoft.AspNetCore.Routing.Matching.AmbiguousMatchException: The request matched multiple endpoints. Matches: 
+
+BankManagement.Controllers.Customer_DetailsController.GetAuditBenchmark (BankManagement)
+BankManagement.Controllers.Customer_DetailsController.Get (BankManagement)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ReportAmbiguity(CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ProcessFinalCandidates(HttpContext httpContext, CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.Select(HttpContext httpContext, CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+ERROR 08:53:40 An unhandled exception has occurred while executing the request.
+Microsoft.AspNetCore.Routing.Matching.AmbiguousMatchException: The request matched multiple endpoints. Matches: 
+
+BankManagement.Controllers.Customer_DetailsController.GetAuditBenchmark (BankManagement)
+BankManagement.Controllers.Customer_DetailsController.Get (BankManagement)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ReportAmbiguity(CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ProcessFinalCandidates(HttpContext httpContext, CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.Select(HttpContext httpContext, CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+INFO  08:56:16 Application started. Press Ctrl+C to shut down.
+INFO  08:56:16 Application started. Press Ctrl+C to shut down.
+INFO  08:56:16 Hosting environment: Development
+INFO  08:56:16 Hosting environment: Development
+INFO  08:56:16 Content root path: C:\Users\oliva\source\repos\BankManagement
+INFO  08:56:16 Content root path: C:\Users\oliva\source\repos\BankManagement
+ERROR 08:56:25 An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Multiple constructors accepting all given argument types have been found in type 'BankManagement.Controllers.Customer_DetailsController'. There should only be one applicable constructor.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.TryFindMatchingConstructor(Type instanceType, Type[] argumentTypes, ConstructorInfo& matchingConstructor, Nullable`1[]& parameterMap)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.FindApplicableConstructor(Type instanceType, Type[] argumentTypes, ConstructorInfo& matchingConstructor, Nullable`1[]& parameterMap)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.CreateFactory(Type instanceType, Type[] argumentTypes)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.CreateActivator(ControllerActionDescriptor descriptor)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.CreateControllerFactory(ControllerActionDescriptor descriptor)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvokerCache.GetCachedResult(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvokerProvider.OnProvidersExecuting(ActionInvokerProviderContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionInvokerFactory.CreateInvoker(ActionContext actionContext)
+   at Microsoft.AspNetCore.Mvc.Routing.ActionEndpointFactory.<>c__DisplayClass7_0.<CreateRequestDelegate>b__0(HttpContext context)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+ERROR 08:56:25 An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Multiple constructors accepting all given argument types have been found in type 'BankManagement.Controllers.Customer_DetailsController'. There should only be one applicable constructor.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.TryFindMatchingConstructor(Type instanceType, Type[] argumentTypes, ConstructorInfo& matchingConstructor, Nullable`1[]& parameterMap)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.FindApplicableConstructor(Type instanceType, Type[] argumentTypes, ConstructorInfo& matchingConstructor, Nullable`1[]& parameterMap)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.CreateFactory(Type instanceType, Type[] argumentTypes)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.CreateActivator(ControllerActionDescriptor descriptor)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.CreateControllerFactory(ControllerActionDescriptor descriptor)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvokerCache.GetCachedResult(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvokerProvider.OnProvidersExecuting(ActionInvokerProviderContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionInvokerFactory.CreateInvoker(ActionContext actionContext)
+   at Microsoft.AspNetCore.Mvc.Routing.ActionEndpointFactory.<>c__DisplayClass7_0.<CreateRequestDelegate>b__0(HttpContext context)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+INFO  08:57:54 Application started. Press Ctrl+C to shut down.
+INFO  08:57:54 Application started. Press Ctrl+C to shut down.
+INFO  08:57:54 Hosting environment: Development
+INFO  08:57:54 Hosting environment: Development
+INFO  08:57:54 Content root path: C:\Users\oliva\source\repos\BankManagement
+INFO  08:57:54 Content root path: C:\Users\oliva\source\repos\BankManagement
+INFO  08:58:00  Http GET request
+INFO  09:04:18 Application started. Press Ctrl+C to shut down.
+INFO  09:04:18 Application started. Press Ctrl+C to shut down.
+INFO  09:04:18 Hosting environment: Development
+INFO  09:04:18 Hosting environment: Development
+INFO  09:04:18 Content root path: C:\Users\oliva\source\repos\BankManagement
+INFO  09:04:18 Content root path: C:\Users\oliva\source\repos\BankManagement
+INFO  09:04:24  Http GET request
+INFO  09:05:21 Application started. Press Ctrl+C to shut down.
+INFO  09:05:21 Application started. Press Ctrl+C to shut down.
+INFO  09:05:21 Hosting environment: Development
+INFO  09:05:21 Hosting environment: Development
+INFO  09:05:21 Content root path: C:\Users\oliva\source\repos\BankManagement
+INFO  09:05:21 Content root path: C:\Users\oliva\source\repos\BankManagement
+INFO  09:05:26  Http GET request
+INFO  09:06:38  Http GET request
+INFO  09:06:44  Http GET_BY_ID request

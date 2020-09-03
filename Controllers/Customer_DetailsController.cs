@@ -27,7 +27,7 @@ namespace BankManagement.Controllers
         [HttpGet]
         public IEnumerable<Customer> Get()
         {
-            _log4net.Info(" Http GET request");
+            _log4net.Info(" Http GET request For Customer Details");
             return _con.Customers.ToList();
         }
 
@@ -35,7 +35,7 @@ namespace BankManagement.Controllers
         [HttpGet("{id}")]
         public Customer Get(int id)
         {
-            _log4net.Info(" Http GET_BY_ID request");
+            _log4net.Info(" Http GET_BY_ID request For Customer Details");
             Customer c = _con.Customers.Find(id);
             return c;
         }
@@ -44,7 +44,7 @@ namespace BankManagement.Controllers
         [HttpPost]
         public void Post(Customer customer)
         {
-            _log4net.Info(" Http POST request");
+            _log4net.Info(" Http POST request For Customer Details");
             _con.Customers.Add(customer);
             _con.SaveChanges();
         }
@@ -53,7 +53,7 @@ namespace BankManagement.Controllers
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] Customer customer)
         {
-            _log4net.Info(" Http PUT request");
+            _log4net.Info(" Http PUT request For Customer Details");
             Customer c = _con.Customers.Find(id);
             c.Name = customer.Name;
             c.Address = customer.Address;
@@ -71,7 +71,7 @@ namespace BankManagement.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-            _log4net.Info(" Http DELETE request");
+            _log4net.Info(" Http DELETE request For Customer Details");
             _con.Customers.Remove(_con.Customers.Find(id));
             _con.SaveChanges();
         }

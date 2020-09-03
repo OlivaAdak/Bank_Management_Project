@@ -14,15 +14,18 @@ namespace BankManagement.Controllers
     public class Branch_DetailsController : ControllerBase
        
     {
+       readonly log4net.ILog _log4net;
         private readonly BankDBContext _con1;
         public Branch_DetailsController(BankDBContext con1)
         {
+            _log4net = log4net.LogManager.GetLogger(typeof(Branch_DetailsController));
             _con1 = con1;
         }
         // GET: api/<BranchController>
         [HttpGet]
         public IEnumerable<BranchDetails> Get()
         {
+            _log4net.Info("Http GET Request For Branch Details");
             return _con1.Branches.ToList();
         }
 
@@ -30,6 +33,7 @@ namespace BankManagement.Controllers
         [HttpGet("{id}")]
         public BranchDetails Get(int id)
         {
+            _log4net.Info("Http GET_BY_ID Request For Branch Details");
             BranchDetails bd = _con1.Branches.Find(id);
             return bd;
         }
@@ -38,6 +42,7 @@ namespace BankManagement.Controllers
         [HttpPost]
         public void Post(BranchDetails details)
         {
+            _log4net.Info("Http POST Request For Branch Details");
             _con1.Branches.Add(details);
             _con1.SaveChanges();
         }
@@ -46,6 +51,7 @@ namespace BankManagement.Controllers
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] BranchDetails details)
         {
+            _log4net.Info("Http PUT Request For Branch Details");
             BranchDetails bd = _con1.Branches.Find(id);
             bd.Location = details.Location;
             bd.IFSC = details.IFSC;
@@ -58,6 +64,7 @@ namespace BankManagement.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            _log4net.Info("Http DELETE Request For Branch Details");
             _con1.Branches.Remove(_con1.Branches.Find(id));
             _con1.SaveChanges();
         }

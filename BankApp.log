@@ -107,3 +107,19 @@ INFO  09:05:21 Content root path: C:\Users\oliva\source\repos\BankManagement
 INFO  09:05:26  Http GET request
 INFO  09:06:38  Http GET request
 INFO  09:06:44  Http GET_BY_ID request
+INFO  09:44:51 Application started. Press Ctrl+C to shut down.
+INFO  09:44:51 Application started. Press Ctrl+C to shut down.
+INFO  09:44:51 Hosting environment: Development
+INFO  09:44:51 Hosting environment: Development
+INFO  09:44:51 Content root path: C:\Users\oliva\source\repos\BankManagement
+INFO  09:44:51 Content root path: C:\Users\oliva\source\repos\BankManagement
+INFO  09:45:10 Http GET Request
+INFO  09:48:55 Application started. Press Ctrl+C to shut down.
+INFO  09:48:55 Application started. Press Ctrl+C to shut down.
+INFO  09:48:55 Hosting environment: Development
+INFO  09:48:55 Hosting environment: Development
+INFO  09:48:55 Content root path: C:\Users\oliva\source\repos\BankManagement
+INFO  09:48:55 Content root path: C:\Users\oliva\source\repos\BankManagement
+INFO  09:49:08 Http GET Request For Branch Details
+INFO  09:49:19 Http GET_BY_ID Request For Branch Details
+INFO  09:50:08  Http GET_BY_ID request For Customer Details

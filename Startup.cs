@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using BankManagement.Models;
+using BankManagement.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -36,6 +37,8 @@ namespace BankManagement
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Bank Application", Version = "v1" });
             });
+            services.AddScoped<Icustomer, customer>();
+            services.AddScoped<Ibranch, branch>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

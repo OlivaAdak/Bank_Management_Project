@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using BankManagement.Models;
+using BankManagement.Repository;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -15,65 +16,156 @@ namespace BankManagement.Controllers
     {
         readonly log4net.ILog _log4net;
 
-        private readonly BankDBContext _con;
+        //private readonly BankDBContext _con;
+        Icustomer custdata;
 
-        public Customer_DetailsController(BankDBContext con)
+        public Customer_DetailsController(Icustomer _custdata)
         {
             _log4net = log4net.LogManager.GetLogger(typeof(Customer_DetailsController));
-            _con = con;
+            custdata = _custdata;
+            //_con = con;
         }
 
-        // GET: api/<CustDetailsController>
+        //GET: api/<CustDetailsController>
         [HttpGet]
-        public IEnumerable<Customer> Get()
+        public IActionResult GetDetails()
         {
             _log4net.Info(" Http GET request For Customer Details");
-            return _con.Customers.ToList();
+            try
+            {
+                var obj = custdata.GetDetails();
+                if (obj == null)
+                {
+                    return NotFound();
+                }
+
+                return Ok(obj);
+            }
+            catch (Exception)
+            {
+                return BadRequest();
+            }
         }
+        //[HttpGet]
+        //public List<Customer> GetDetails()
+        //{
+        //    if (_con != null)
+        //    {
+        //        return custdata.GetDetails.ToList();
+        //    }
+
+        //    return null;
+        //}
 
         // GET api/<CustDetailsController>/5
-        [HttpGet("{id}")]
-        public Customer Get(int id)
+        [HttpGet]
+        [Route("GetDetail")]
+        public IActionResult GetDetail(int Id)
         {
-            _log4net.Info(" Http GET_BY_ID request For Customer Details");
-            Customer c = _con.Customers.Find(id);
-            return c;
+            if (Id <= 0)
+            {
+                return BadRequest();
+            }
+
+            try
+            {
+                var data = custdata.GetDetail(Id);
+                if (data == null)
+                {
+                    return NotFound();
+                }
+                return Ok(data);
+            }
+            catch (Exception)
+            {
+                return BadRequest();
+            }
         }
 
         // POST api/<CustDetailsController>
         [HttpPost]
-        public void Post(Customer customer)
+        [Route("AddDetail")]
+        public IActionResult AddDetail(Customer model)
         {
-            _log4net.Info(" Http POST request For Customer Details");
-            _con.Customers.Add(customer);
-            _con.SaveChanges();
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    var Id = custdata.AddDetail(model);
+                    if (Id > 0)
+                    {
+                        return Ok(Id);
+                    }
+                    else
+                    {
+                        return NotFound();
+                    }
+                }
+                catch (Exception)
+                {
+
+                    return BadRequest();
+                }
+
+            }
+
+            return BadRequest();
         }
 
         // PUT api/<CustDetailsController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] Customer customer)
+        [HttpPut]
+        [Route("UpdateDetail")]
+        public string UpdateDetail(int id, Customer c)
         {
-            _log4net.Info(" Http PUT request For Customer Details");
-            Customer c = _con.Customers.Find(id);
-            c.Name = customer.Name;
-            c.Address = customer.Address;
-            c.DOB = customer.DOB;
-            c.AdharCardNo = customer.AdharCardNo;
-            c.PhoneNo = customer.PhoneNo;
-            c.Email = customer.Email;
-            c.AccountType = customer.AccountType;
-            c.Balance = customer.Balance;
-            _con.Customers.Update(c);
-            _con.SaveChanges();
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    var result = custdata.UpdateDetail(id, c);
+
+                    return result.ToString();
+                }
+                catch (Exception ex)
+                {
+                    if (ex.GetType().FullName ==
+                             "Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException")
+                    {
+                        return "Updated";
+                    }
+
+                    return "cathing";
+                }
+            }
+
+            return "if failed";
         }
 
         // DELETE api/<CustDetailsController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [HttpDelete]
+        [Route("DeleteDetail")]
+        public IActionResult DeleteDetail(int id)
         {
-            _log4net.Info(" Http DELETE request For Customer Details");
-            _con.Customers.Remove(_con.Customers.Find(id));
-            _con.SaveChanges();
+
+
+            if (id == 0)
+            {
+                return BadRequest(id);
+            }
+
+            try
+            {
+                var result = custdata.DeleteDetail(id);
+                if (result == 0)
+                {
+                    return NotFound(result);
+                }
+                return Ok(result);
+            }
+            catch (Exception)
+            {
+
+                return BadRequest(id);
+            }
         }
     }
 }

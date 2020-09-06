@@ -12,7 +12,11 @@ namespace BankManagement.Models
         {
 
         }
-        public DbSet<Customer> Customers { get; set; }
-        public DbSet<BranchDetails> Branches { get; set; }
+        public BankDBContext()
+        {
+
+        }
+        public virtual DbSet<Customer> Customers { get; set; }
+        public virtual DbSet<BranchDetails> Branches { get; set; }
     }
 }
